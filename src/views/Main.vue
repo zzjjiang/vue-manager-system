@@ -1,15 +1,22 @@
 <template>
   <el-container style="height: 100%;">
-    <el-aside width="200px">Aside</el-aside>
+    <el-aside width="200px"><common-aside></common-aside></el-aside>
     <el-container>
-      <el-header>Header</el-header>
+      <el-header><common-header></common-header></el-header>
       <el-main>Main</el-main>
     </el-container>
   </el-container>
 </template>
 
 <script>
-export default {}
+import CommonAside from '../components/CommonAside'
+import CommonHeader from '../components/CommonHeader'
+export default {
+  components: {
+    CommonAside,
+    CommonHeader
+  }
+}
 </script>
 
 <style lang="scss" scoped></style>
