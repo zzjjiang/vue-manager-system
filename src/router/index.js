@@ -5,10 +5,10 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
   routes: [
-    // {
-    //   path: '/about',
-    //   name: 'About',
-    //   component: () => import('../views/About.vue')
-    // }
+    {
+      path: '/',
+      name: 'main',
+      component: () => import('../views/Main.vue')
+    }
   ]
 })
