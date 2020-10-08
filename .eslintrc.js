@@ -17,7 +17,9 @@ module.exports = {
         // 不要分号
         semi: false,
         // 设置单引号
-        singleQuote: true
+        singleQuote: true,
+        // 设置换行长度
+        printWidth: 160
       }
     ]
   }
