@@ -1,6 +1,6 @@
 <template>
   <el-menu default-active="2" class="el-menu-vertical-demo" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-    <el-menu-item :index="item.path" v-for="item in noChild" :key="item.path">
+    <el-menu-item :index="item.path" v-for="item in noChild" :key="item.path" @click="clickMenu(item)">
       <i :class="'el-icon-' + item.icon"></i>
       <span slot="title">{{ item.label }}</span>
     </el-menu-item>
@@ -9,7 +9,7 @@
         <i :class="'el-icon-' + item.icon"></i>
         <span>{{ item.label }}</span>
       </template>
-      <el-menu-item :index="subItem.path" v-for="(subItem, subIndex) in item.children" :key="subIndex">
+      <el-menu-item :index="subItem.path" v-for="(subItem, subIndex) in item.children" :key="subIndex" @click="clickMenu(subItem)">
         {{ subItem.label }}
       </el-menu-item>
     </el-submenu>
@@ -66,6 +66,11 @@ export default {
           ]
         }
       ]
+    }
+  },
+  methods: {
+    clickMenu(item) {
+      this.$store.commit('selectMenu', item)
     }
   }
 }
