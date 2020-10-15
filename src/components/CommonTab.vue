@@ -1,6 +1,14 @@
 <template>
   <div class="tabs">
-    <el-tag :key="tag.name" size="small" v-for="tag in tags" :closable="tag.name !== 'home'" :disable-transitions="false" @close="handleClose(tag)">
+    <el-tag
+      :key="tag.name"
+      size="small"
+      v-for="tag in tags"
+      :closable="tag.name !== 'home'"
+      :disable-transitions="false"
+      @close="handleClose(tag)"
+      @click="changeMenu(tag)"
+    >
       {{ tag.label }}
     </el-tag>
   </div>
@@ -27,6 +35,10 @@ export default {
     }),
     handleClose(tag) {
       this.close(tag)
+    },
+    changeMenu(tag) {
+      this.$router.push({ name: tag.name })
+      this.$store.commit('selectmenu', tag)
     }
   }
 }

@@ -4,6 +4,9 @@
     <el-container>
       <el-header><common-header></common-header></el-header>
       <common-tab></common-tab>
+      <el-main>
+        <router-view />
+      </el-main>
     </el-container>
   </el-container>
 </template>
