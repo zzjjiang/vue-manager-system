@@ -8,6 +8,7 @@
       :disable-transitions="false"
       @close="handleClose(tag)"
       @click="changeMenu(tag)"
+      :effect="$route.name === tag.name ? 'dark' : 'plain'"
     >
       {{ tag.label }}
     </el-tag>
